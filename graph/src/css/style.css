@@ -1,0 +1,537 @@
+/*@font-face {
+	font-family: 'Saira Semi Condensed';
+	src: url('SSC-Regular.ttf');
+}*/
+
+body {
+	margin: 0px;
+	padding: 0px;
+
+	/*font-family: 'Saira Semi Condensed';*/
+
+	background-color: rgb(40, 45, 53);
+}
+
+/*
+	TITLE BAR
+*/
+
+.ui-title {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 32px;
+	background-color: rgb(40, 45, 53);
+
+	user-select: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+
+	-webkit-app-region: drag;
+	pointer-events: none;
+
+	z-index: 100;
+}
+
+.ui-title .ui-apptitle {
+	position: absolute;
+	color: white;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.ui-title .ui-titlecon {
+	position: absolute;
+	top: 16px;
+	left: 20px;
+	width: 32px;
+	height: 32px;
+	transform: translate(-50%, -50%);
+	margin-right: 4px;
+}
+
+.ui-title .ui-titlebtn-container {
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	height: 32px;
+	pointer-events: all;
+	-webkit-app-region: none;
+}
+
+.ui-title .ui-titlebtn {
+	position: relative;
+	float: right;
+	width: 54px;
+	height: 32px;
+	transition: background-color 0.15s;
+	cursor: pointer;
+}
+
+.ui-title .ui-titlebtn:hover {
+	background-color: rgb(53, 59, 70);
+}
+
+.ui-title .ui-titlebtn:hover i {
+	color: white;
+}
+
+.ui-title .ui-titlebtn i {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	color: rgb(163, 163, 163);
+}
+
+.ui-title .ui-titlebtn-close:hover {
+	background-color: rgb(180, 0, 36);
+}
+
+.ui-title .ui-titlebtn-close:hover i {
+	color: white;
+}
+
+/*
+	CONTENT
+*/
+
+#container {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+}
+
+#container .ui-centre-container {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 380px;
+	height: 320px;
+	background-color: #434343;
+	color: white;
+	border-radius: 6px;
+	transform: translate(-50%, -50%);
+}
+
+@keyframes loader-rotate {
+    from {
+		transform: rotate(0deg);
+	}
+    to {
+		transform: rotate(359deg);
+	}
+}
+
+#container #containerContent {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+.ui-verycentre {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.ui-loader-rotate {
+	animation: loader-rotate 0.5s infinite linear;
+}
+
+#container .ui-centre-container .loginInfoContainer {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+#container .ui-centre-container .loginInfoContainer .inputbox {
+	position: absolute;
+	left: 50%;
+	transform: translate(-50%, -0%);
+	margin-top: 8px;
+    padding: 8px;
+    font-size: 14px;
+    text-align: center;
+    background-color: #353535;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    transition: background-color 0.1s;
+}
+
+#container .ui-centre-container .loginInfoContainer .inputbox:focus {
+	background-color: #292929;
+	border:none;
+	box-shadow: none;
+}
+
+#container .ui-centre-container .loginInfoContainer .inputbutton {
+	position: absolute;
+	left: 50%;
+	transform: translate(-50%, -0%);
+	background-color: #353535;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    padding: 8px 16px;
+    color: #B4B4B4;
+    transition: background-color 0.1s;
+}
+
+#container .ui-centre-container .loginInfoContainer .inputbutton:hover {
+	background-color: #292929;
+}
+
+/* 
+	FILE MANAGER
+*/
+
+::-webkit-scrollbar {
+	width: 12px;
+}
+
+::-webkit-scrollbar-track {
+	background: #303030;
+}
+
+::-webkit-scrollbar-thumb {
+	background: #888;
+	cursor: pointer;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: #555;
+}
+
+#container .ui-fm-title {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 42px;
+	background-color: rgb(51, 59, 71);
+}
+
+#container .ui-fm-title .left {
+	position: absolute;
+	float: left;
+	top: 0px;
+	left: 0px;
+	height: 100%;
+	padding: 0px 2px;
+}
+
+#container .ui-fm-title .right {
+	position: absolute;
+	float: right;
+	top: 0px;
+	right: 0px;
+	height: 100%;
+	padding: 0px 2px;
+}
+
+#container .ui-fm-title .ui-fm-title-button {
+	position: relative;
+	width: 34px;
+	height: 34px;
+	margin: 4px 2px;
+	color: rgb(184, 184, 184);
+	transition: color 0.1s;
+	float: left;
+	cursor: pointer;
+}
+
+#container .ui-fm-title .disabled {
+	color: rgb(99, 99, 99);
+	cursor: default;
+}
+
+#container .ui-fm-title .ui-fm-title-button:not(.disabled):not(.ui-greenlol):not(.ui-redlol):hover {
+	color: white;
+}
+
+#container .ui-fm-title .ui-greenlol {
+	color: #00FF00;
+}
+
+#container .ui-fm-title .ui-redlol {
+	color: #FF0000;
+}
+
+#container .ui-fm-title .ui-fm-title-button i {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 24px;
+}
+
+#container .ui-fm-filecontainer {
+	position: absolute;
+	top: 42px;
+	left: 0px;
+	width: 100%;
+	height: calc(100% - 42px);
+	overflow-y: hidden;
+}
+
+#container .ui-fm-filecontainer .item {
+	position: relative;
+	width: 100%;
+	height: 48px;
+	border-bottom: 1px solid #444444;
+}
+
+#container .ui-fm-filecontainer .item .clickable-area {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: calc(100% - 48px);
+	height: 100%;
+}
+
+#container .ui-fm-filecontainer .item .fileIcon {
+	position: absolute;
+	top: 24px;
+	left: 24px;
+	width: 40px;
+	height: 40px;
+	transform: translate(-50%, -50%);
+}
+
+#container .ui-fm-filecontainer .item .fileIcon i {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 32px;
+	color: yellowgreen;
+}
+
+#container .ui-fm-filecontainer .item p {
+	position: absolute;
+	margin: 0px;
+	top: 50%;
+	left: 48px;
+	transform: translate(-0%, -50%);
+	color: white;
+}
+
+#container .ui-fm-filecontainer .item .item-right {
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	float: right;
+	height: 100%;
+	padding: 0px 4px;
+}
+
+#container .ui-fm-filecontainer .item .item-right .icon-container {
+	position: relative;
+	float: left;
+	margin: 8px 4px;
+	width: 32px;
+	height: 32px;
+	transition: color 0.1s;
+	color: greenyellow;
+	cursor: pointer;
+}
+
+#container .ui-fm-filecontainer .item .item-right .icon-container:hover {
+	color: rgb(109, 173, 13);
+}
+
+#container .ui-fm-filecontainer .item .item-right .icon-container i {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.ui-options-menu {
+	position: fixed;
+	top: 32px;
+	left: 0px;
+	width: 100%;
+	height: calc(100% - 32px);
+	background-color: rgba(0, 0, 0, 0.4);
+}
+
+.ui-options-menu .ui-options-menu-slide-container {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+}
+
+.ui-options-menu .ui-centre-container {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 380px;
+	height: 320px;
+	background-color: #353535;
+	color: white;
+	border-radius: 6px;
+	transform: translate(-50%, -50%);
+}
+
+.ui-options-menu .ui-centre-container .topbar {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 42px;
+	border-bottom: 1px solid #444444;
+}
+
+.ui-options-menu .ui-centre-container .topbar h3 {
+	position: absolute;
+	top: 21px;
+	left: 10.5px;
+	margin: 0px;
+	transform: translate(-0%, -50%);
+}
+
+.ui-options-menu .ui-centre-container .topbar .closeButton {
+	position: absolute;
+	top: 21px;
+	right: -12px;
+	width: 34px;
+	height: 34px;
+	transform: translate(-50%, -50%);
+	font-size: 20px;
+	color: rgb(184, 184, 184);
+	transition: color 0.1s;
+}
+
+.ui-options-menu .ui-centre-container .topbar .closeButton:not(.cbDisabled):hover {
+	color: white;
+}
+
+.cbDisabled {
+	color: rgb(94, 94, 94)!important;
+}
+
+.options-disabled {
+	pointer-events: none;
+}
+
+.ui-options-menu .ui-centre-container .topbar .closeButton i {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.ui-options-menu .ui-centre-container .contents {
+	position: absolute;
+	top: 42px;
+	left: 0px;
+	width: 100%;
+	height: calc(100% - 42px);
+}
+
+.ui-options-menu .ui-centre-container .contents .centre-content {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+}
+
+.ui-options-menu .ui-centre-container .contents .overlay-content {
+	position: absolute;
+	top: 1px;
+	left: 0px;
+	width: 100%;
+	height: calc(100% - 7px);
+	background-color: #353535;
+}
+
+.ui-options-menu .ui-centre-container .contents .overlay-hidden {
+	visibility: hidden;
+	pointer-events: none;
+}
+
+.ui-options-menu .ui-centre-container .contents .hint-text {
+	position: absolute;
+	top: -120px;
+	left: 50%;
+	width: 380;
+	text-align: center;
+	transform: translate(-50%, -0%);
+	margin: 0px;
+}
+
+.ui-options-menu .ui-centre-container .contents .file-list {
+	position: absolute;
+	top: 25%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 280px;
+	height: 180px;
+	overflow-y: scroll;
+	background-color: #242424;
+	border-radius: 6px;
+}
+
+.ui-options-menu .ui-centre-container .contents .file-list-button {
+	position: absolute;
+	top: 123px;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.ui-options-menu .ui-centre-container .contents .file-list .item {
+	position: relative;
+	width: 100%;
+	height: 48px;
+	border-bottom: 1px solid #444444;
+}
+
+.ui-options-menu .ui-centre-container .contents .file-list .item .clickable-area {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: calc(100% - 48px);
+	height: 100%;
+}
+
+.ui-options-menu .ui-centre-container .contents .file-list .item .fileIcon {
+	position: absolute;
+	top: 24px;
+	left: 24px;
+	width: 40px;
+	height: 40px;
+	transform: translate(-50%, -50%);
+}
+
+.ui-options-menu .ui-centre-container .contents .file-list .item .fileIcon i {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 32px;
+	color: yellowgreen;
+}
+
+.ui-options-menu .ui-centre-container .contents .file-list .item p {
+	position: absolute;
+	margin: 0px;
+	top: 50%;
+	left: 48px;
+	transform: translate(-0%, -50%);
+	color: white;
+}
+
+.ui-options-menu .ui-centre-container .contents .file-list .selected {
+	background-color: #3a3a3a;
+}
